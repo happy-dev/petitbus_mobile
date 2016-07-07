@@ -1,0 +1,20 @@
+TRUCS MOINS COOLS (je dis moins cools car cette techno est ouf !!)
+1. Parfois l'app ne se connecte pas correctement au serveur de dev. Il faut la réinstaller plusieurs fois pour que ça fonctionne bien.
+2. Parfois l'app plante, voire fait planter le téléphone... 
+3. Pas mal de cinématiques de dev menant à des erreurs font planter l'application. Mieux vaut ne pas s'amuser à "save" un code qui plante :) 
+   Quand ceci arrive, relancer l'appli amène à "Could not connect to development server" erreur, et il est alors nécessaire désinstaller/réinstaller l'application manuellement. Pas un big deal tant que l'appli est petite et que le build prend 30s. Sur une vrai appli avec un process de build plus complexe, ça pourrait être assez frustrant. 
+
+
+GOTCHAS
+1. Tous les éléments n'acceptent pas toute les propriétés CSS. Ex : Impossible de set "color" au niveau de la View. C'est à savoir... Ça n'est pas dit clairement dans la doc il m'a semblé, et ça m'a fait perdre pas mal de temps.
+2. Pas encore certain à l'heure où j'écris cela, mais il me semble que parfois, le serveur Node plante, et c'est ça qui fait planter l'application. ON tombe alors sur le message d'erreur "Could not connect to development server". Le fait de lancer le serveur séparément via la commande : 
+  react-native start --port=8082
+
+permet de relancer le serveur en cas de plantage, 100x fois rapide que d'avoir à désinstaller l'application puis lancer la commande :
+  react-native run-android 
+
+à nouveau.
+
+
+BONUS
+Checker CameraRoll
