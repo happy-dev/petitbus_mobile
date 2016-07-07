@@ -10,11 +10,11 @@
 
 
 2.  **Launch NodeJS server locally** <br/> 
-In a Terminal tab, from the project root, run : 
-`react-native start`
-If you do not have the `react-native` command installed, please follow this (Getting Started)[https://facebook.github.io/react-native/docs/getting-started.html#content] from the official website.
+In a Terminal tab, from the project root, run : <br/>
+`react-native start` <br/>
+If you do not have the `react-native` command installed, please follow this [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html#content) from the official website.
 
 
 3.  **Android** <br/>
-To launch the app, either in a simulator or on a connected device, run the following command from the project root : 
+To launch the app, either in a simulator or on a connected device, run the following command from the project root : <br/>
 `react-native run-android`
