@@ -3,8 +3,15 @@
  */
 import React, { Component } from 'react';
 import { AppRegistry, DrawerLayoutAndroid, StyleSheet, Text, View, ListView, TouchableOpacity } from 'react-native';
+import initializeParse from './src/initializeParse';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import NavBar from 'petitbus_mobile/src/navBar';
+import NavBar from './src/NavBar';
+import WriteToParsePage from './src/WriteToParsePage';
+
+
+// Initializing Parse
+initializeParse();
+
 
 var PetitbusMobile = React.createClass({
   getInitialState: function() {
@@ -42,18 +49,16 @@ var PetitbusMobile = React.createClass({
         renderNavigationView={() => navigationView}>
 
         <ScrollableTabView
-          initialPage={1}
+          initialPage={0}
           tabBarPosition="bottom"
           renderTabBar={() => <NavBar />}
         >
+          <WriteToParsePage tabLabel="http"/>
           <View tabLabel="map">
             <Text>Map Page !</Text>
           </View>
           <View tabLabel="textsms">
             <Text>Push Notif Page !</Text>
-          </View>
-          <View tabLabel="http">
-            <Text>Parse Page !</Text>
           </View>
         </ScrollableTabView>
       </DrawerLayoutAndroid>
