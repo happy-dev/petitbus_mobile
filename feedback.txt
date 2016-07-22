@@ -1,20 +1,26 @@
 TRUCS MOINS COOLS (je dis moins cools car cette techno est ouf !!)
 1. Parfois l'app ne se connecte pas correctement au serveur de dev. Il faut la réinstaller plusieurs fois pour que ça fonctionne bien.
+
 2. Parfois l'app plante, voire fait planter le téléphone... 
+
 3. Pas mal de cinématiques de dev menant à des erreurs font planter l'application. Mieux vaut ne pas s'amuser à "save" un code qui plante :) 
    Quand ceci arrive, relancer l'appli amène à "Could not connect to development server" erreur, et il est alors nécessaire désinstaller/réinstaller l'application manuellement. Pas un big deal tant que l'appli est petite et que le build prend 30s. Sur une vrai appli avec un process de build plus complexe, ça pourrait être assez frustrant. 
+
 4. Quand tu amènes l'appli à une stade qui l'a fait planter, une réinstallation est nécessaire. C'est painful. Tu as alors un workflow de 2 minutes par test, le temps de reconnecter l'appli au serveur de dev.
+
+5. Au bout d'une dizaine de redeploy, React Native sature complètement la RAM du téléphone. Il doit y avoir de la memory leak quelque part. Je n'ai pas trouvé moyen de l'empêcher. Ça oblige à redémarrer le téléphone, ce qui ralentit beaucoup le workflow. Ça m'arrivait 4 ou 5 fois par jour...
 
 
 GOTCHAS
 1. Tous les éléments n'acceptent pas toute les propriétés CSS. Ex : Impossible de set "color" au niveau de la View. C'est à savoir... Ça n'est pas dit clairement dans la doc il m'a semblé, et ça m'a fait perdre pas mal de temps.
+
 2. Pas encore certain à l'heure où j'écris cela, mais il me semble que parfois, le serveur Node plante, et c'est ça qui fait planter l'application. ON tombe alors sur le message d'erreur "Could not connect to development server". Le fait de lancer le serveur séparément via la commande : 
   react-native start --port=8082
-
 permet de relancer le serveur en cas de plantage, 100x fois rapide que d'avoir à désinstaller l'application puis lancer la commande :
   react-native run-android 
-
 à nouveau.
+
+3. Attention à ne pas tenter d'installer un Component de React web dans React Native...
 
 
 BONUS

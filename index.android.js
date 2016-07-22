@@ -1,18 +1,30 @@
 /**
  * Entry point of PetitBus mobile App
  */
+
+// External libs
 import React, { Component } from 'react';
 import { AppRegistry, DrawerLayoutAndroid, StyleSheet, Text, View, ListView, TouchableOpacity } from 'react-native';
-import initializeParse from './src/initializeParse';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import NavBar from './src/NavBar';
-import WriteToParsePage from './src/WriteToParsePage';
+
+// Custom libs
+import initializeParse from './src/libs/initializeParse';
+
+// Custom components
+import NavBar from './src/components/NavBar';
+
+// Custom pages
+import WriteToParsePage from './src/pages/WriteToParsePage';
+
+// Custom style
+import SC from './src/styles/constants.js';// Style Constants
 
 
 // Initializing Parse
 initializeParse();
 
 
+// Creating page architecture
 var PetitbusMobile = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({// DataSource
@@ -46,7 +58,9 @@ var PetitbusMobile = React.createClass({
       <DrawerLayoutAndroid
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => navigationView}>
+        renderNavigationView={() => navigationView}
+        style={{flex: 1}}
+      >
 
         <ScrollableTabView
           initialPage={0}
@@ -67,31 +81,16 @@ var PetitbusMobile = React.createClass({
 
 
   _onPressMenu: function() {
-    console.log("Pressed !!");
   },
 });
 
 
+// Style constants
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2A3642',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  // MENU
   menu: {
     flex: 1,
-    backgroundColor: '#2A3642',
+    backgroundColor: SC.backgroundBlue,
   },
   menuListView : {
     padding:  15,
