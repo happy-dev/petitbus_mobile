@@ -23,3 +23,11 @@ If you do not have the `react-native` command installed, please follow this [Get
 4.  **Android** <br/>
 To launch the app, either in a simulator or on a connected device, run the following command from the project root : <br/>
 `react-native run-android`
+
+<br/>
+To access the developer's menu, enter the following command line once the app is launched : <br/>
+`adb shell input keyevent 82`
+
+<br/>
+In `Dev Settings > Debug server host & port for device`, dev setting is probably `localhost:8081`.<br/>
+`Hot Reloading` should be enabled.<br/>
